@@ -13,55 +13,11 @@ function makeBoard() {
   }
   return board;
 }
-class Queue {
-  constructor() {
-    this.elements = {};
-    this.head = 0;
-    this.tail = 0;
-  }
-  enqueue(element) {
-    this.elements[this.tail] = element;
-    this.tail++;
-  }
-  dequeue() {
-    const item = this.elements[this.head];
-    delete this.elements[this.head];
-    this.head++;
-    return item;
-  }
-  peek() {
-    return this.elements[this.head];
-  }
-  get length() {
-    return this.tail - this.head;
-  }
-  get isEmpty() {
-    return this.length === 0;
-  }
-}
-class KnightNode {
-  constructor(value, predecessor = null, children = []) {
-    this.value = value;
-    this.predecessor = predecessor;
-    this.children = children;
-  }
-  set setPrecedessor(value) {
-    this.KnightNode.predecessor = value;
-  }
-}
 const Knight = () => {
-  // const KNIGHT_OFFSETS = [
-  //   [1, 2], [1, -2],
-  //   [2, 1], [2, -1],
-  //   [-1, 2], [-1, -2],
-  //   [-2, 1], [-2, -1],
-  // ];
   const newPiece = () => {
     board[0][0] = '𐂃';
     console.log(board[0][0]);
     console.log(board);
-    // board[pos][0] = '𐂃';
-    // console.log(board);
   };
   const generateMoves = (start) => {
     const possibleMoves = [];
